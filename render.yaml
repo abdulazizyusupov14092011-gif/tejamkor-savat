@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: tejamkor-savat
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 24.22.1
+      - key: NEXT_TELEMETRY_DISABLED
+        value: 1
+      - key: PORT
+        value: 10000
